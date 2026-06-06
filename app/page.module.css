@@ -1,0 +1,384 @@
+.storySection,
+.projectSection,
+.craftSection {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: #050505;
+  color: #fff7ea;
+}
+
+.storySection {
+  padding: clamp(88px, 12vw, 164px) clamp(20px, 6vw, 96px);
+  border-top: 1px solid rgba(255, 236, 204, 0.1);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 142, 58, 0.14), transparent 34%),
+    radial-gradient(circle at 12% 78%, rgba(86, 143, 212, 0.12), transparent 34%),
+    linear-gradient(180deg, #050505 0%, #090806 54%, #050505 100%);
+}
+
+.storySection::before,
+.projectSection::before,
+.credentialsSection::before,
+.craftSection::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, transparent, #000 18%, #000 74%, transparent);
+}
+
+.projectSection,
+.credentialsSection {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: clamp(88px, 12vw, 164px) clamp(20px, 6vw, 96px);
+  background:
+    radial-gradient(circle at 15% 18%, rgba(86, 143, 212, 0.13), transparent 34%),
+    radial-gradient(circle at 88% 76%, rgba(255, 142, 58, 0.12), transparent 36%),
+    #050505;
+  color: #fff7ea;
+}
+
+.sectionGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
+  gap: clamp(36px, 7vw, 112px);
+  align-items: end;
+  max-width: 1180px;
+  margin: 0 auto clamp(42px, 7vw, 84px);
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: rgba(255, 193, 133, 0.78);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.sectionGrid h2,
+.craftHeader h2 {
+  max-width: 780px;
+  margin: 0;
+  color: #fff6e8;
+  font-size: clamp(2.25rem, 5vw, 5.6rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.96;
+}
+
+.lede {
+  max-width: 560px;
+  margin: 0;
+  color: rgba(255, 247, 234, 0.72);
+  font-size: clamp(1rem, 1.25vw, 1.16rem);
+  line-height: 1.85;
+}
+
+.profilePanel {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.profilePanel div {
+  min-height: 134px;
+  border: 1px solid rgba(255, 236, 204, 0.12);
+  border-radius: 8px;
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.032)),
+    rgba(15, 14, 13, 0.72);
+  backdrop-filter: blur(22px);
+}
+
+.profilePanel span {
+  display: block;
+  margin-bottom: 18px;
+  color: rgba(255, 193, 133, 0.72);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.profilePanel a {
+  color: rgba(255, 247, 234, 0.9);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.projectGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.projectCard {
+  min-height: 280px;
+  border: 1px solid rgba(255, 236, 204, 0.12);
+  border-radius: 8px;
+  padding: clamp(22px, 3vw, 34px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
+    rgba(14, 13, 12, 0.78);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(26px);
+  transition:
+    border-color 280ms ease,
+    transform 280ms ease,
+    background 280ms ease;
+}
+
+.projectCard:hover {
+  border-color: rgba(255, 177, 103, 0.38);
+  background:
+    linear-gradient(180deg, rgba(255, 177, 103, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(14, 13, 12, 0.86);
+  transform: translateY(-6px);
+}
+
+.projectCard span {
+  display: block;
+  margin-bottom: 54px;
+  color: rgba(255, 193, 133, 0.74);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.projectCard h3 {
+  margin: 0 0 14px;
+  color: #fff8ed;
+  font-size: clamp(1.35rem, 1.9vw, 1.95rem);
+  line-height: 1.08;
+}
+
+.projectCard strong {
+  display: block;
+  margin: 0 0 14px;
+  color: rgba(255, 193, 133, 0.8);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.projectCard p {
+  margin: 0;
+  color: rgba(255, 247, 234, 0.68);
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.craftSection {
+  min-height: 72svh;
+  padding: clamp(88px, 12vw, 160px) clamp(20px, 6vw, 96px);
+  background:
+    radial-gradient(circle at 22% 8%, rgba(86, 143, 212, 0.16), transparent 31%),
+    radial-gradient(circle at 78% 78%, rgba(255, 142, 58, 0.12), transparent 35%),
+    #050505;
+}
+
+.craftHeader {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto clamp(36px, 6vw, 72px);
+}
+
+.capabilityList {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.capabilityList span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  border: 1px solid rgba(255, 236, 204, 0.14);
+  border-radius: 999px;
+  padding: 0 18px;
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 247, 234, 0.84);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(18px);
+}
+
+.credentialsSection {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(255, 142, 58, 0.14), transparent 33%),
+    radial-gradient(circle at 12% 84%, rgba(86, 143, 212, 0.14), transparent 34%),
+    linear-gradient(180deg, #050505, #080706 52%, #050505);
+}
+
+.credentialsGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  gap: clamp(28px, 5vw, 72px);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.timeline,
+.listPanel {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline article,
+.listPanel {
+  border: 1px solid rgba(255, 236, 204, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(14, 13, 12, 0.74);
+  backdrop-filter: blur(24px);
+}
+
+.timeline article {
+  padding: 24px;
+}
+
+.timeline h3 {
+  margin: 0 0 10px;
+  color: #fff8ed;
+  font-size: clamp(1.12rem, 1.7vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.timeline p,
+.timeline span,
+.listPanel p {
+  margin: 0;
+  color: rgba(255, 247, 234, 0.7);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.timeline span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 193, 133, 0.74);
+  font-weight: 700;
+}
+
+.listPanel {
+  padding: 24px;
+}
+
+.listPanel p + p {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 236, 204, 0.1);
+}
+
+.strengthList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.strengthList span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  border: 1px solid rgba(255, 236, 204, 0.13);
+  border-radius: 999px;
+  padding: 0 15px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 247, 234, 0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .sectionGrid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profilePanel,
+  .credentialsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCard {
+    min-height: 220px;
+  }
+
+  .projectCard span {
+    margin-bottom: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .storySection,
+  .projectSection,
+  .credentialsSection,
+  .craftSection {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .sectionGrid h2,
+  .craftHeader h2 {
+    font-size: clamp(2rem, 12vw, 3.4rem);
+  }
+
+  .capabilityList span {
+    width: 100%;
+    justify-content: center;
+    min-height: 42px;
+    font-size: 0.76rem;
+    text-align: center;
+  }
+
+  .profilePanel div,
+  .timeline article,
+  .listPanel {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectCard,
+  .capabilityList span {
+    transition: none;
+  }
+}

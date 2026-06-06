@@ -1,65 +1,193 @@
-import Image from "next/image";
+import VideoIntro from "./components/VideoIntro/VideoIntro";
+import styles from "./page.module.css";
+
+const capabilities = [
+  "Python",
+  "Flask",
+  "MySQL",
+  "MongoDB",
+  "HTML",
+  "CSS",
+  "NumPy",
+  "Pandas",
+  "Matplotlib",
+  "Seaborn",
+  "Scikit-learn",
+  "GitHub",
+  "VS Code"
+];
+
+const projects = [
+  {
+    title: "NLP Text Classification",
+    description:
+      "Built a machine learning system that classifies messages as spam or not spam using preprocessing, TF-IDF vectorization, and supervised learning models.",
+    meta: "Python / Scikit-learn / Pandas / NumPy",
+    role: "Machine Learning Developer"
+  },
+  {
+    title: "AI Coding Practice Platform",
+    description:
+      "Developed a web platform where users can solve programming problems, store results, and track progress through a Flask backend and MySQL database.",
+    meta: "Python / Flask / MySQL / HTML / CSS",
+    role: "Full Stack Developer"
+  },
+  {
+    title: "Cinematic Developer Portfolio",
+    description:
+      "Created this immersive personal portfolio with video storytelling, animated particles, glass controls, and responsive sections for profile presentation.",
+    meta: "Next.js / Three.js / GSAP / CSS Modules",
+    role: "Frontend Developer"
+  }
+];
+
+const education = [
+  {
+    title: "B.Tech in Artificial Intelligence & Data Science",
+    place: "Muthayammal Engineering College (Autonomous), Rasipuram",
+    detail: "Anna University | CGPA 7.69 | 2026"
+  },
+  {
+    title: "Intermediate",
+    place: "Narayana Junior College, Gudur",
+    detail: "BIEAP State Board | 71.5% | 2022"
+  },
+  {
+    title: "SSC",
+    place: "Narayana E-Techno School, Gudur",
+    detail: "BSEAP State Board | 96% | 2020"
+  }
+];
+
+const certifications = [
+  "NPTEL Foundation of Cloud IoT Edge ML",
+  "NPTEL Distributed Systems",
+  "500+ Python practice problems completed on CodeChef"
+];
+
+const strengths = [
+  "Hardworking and quick learner",
+  "Strong communication ability",
+  "Active listening",
+  "Time management",
+  "Telugu and English"
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <VideoIntro />
+
+      <section id="profile" className={styles.storySection}>
+        <div className={styles.sectionGrid}>
+          <div>
+            <p className={styles.eyebrow}>Profile</p>
+            <h2>AI & DS student building practical software with clear problem-solving.</h2>
+          </div>
+
+          <p className={styles.lede}>
+            I am Korapati Srinivasulu, a B.Tech Artificial Intelligence and Data
+            Science student focused on Python, machine learning, Flask web
+            development, and database-backed applications. I want to contribute
+            to innovative software solutions while growing as a technology
+            professional.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className={styles.profilePanel}>
+          <div>
+            <span>Email</span>
+            <a href="mailto:korapatisrinivasulu14@gmail.com">
+              korapatisrinivasulu14@gmail.com
+            </a>
+          </div>
+          <div>
+            <span>Phone</span>
+            <a href="tel:+919390614094">+91 9390614094</a>
+          </div>
+          <div>
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/korapati-srinivasulu">
+              korapati-srinivasulu
+            </a>
+          </div>
+          <div>
+            <span>Resume</span>
+            <a href="/resume/korapati-srinivasulu-resume.pdf">Download PDF</a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="projects" className={styles.projectSection}>
+        <div className={styles.sectionGrid}>
+          <div>
+            <p className={styles.eyebrow}>Projects</p>
+            <h2>Hands-on work across machine learning and full stack development.</h2>
+          </div>
+
+          <p className={styles.lede}>
+            These projects show my current direction: using AI concepts, data
+            preprocessing, backend development, and simple interfaces to solve
+            real problems with practical engineering.
+          </p>
+        </div>
+
+        <div className={styles.projectGrid}>
+          {projects.map((project) => (
+            <article className={styles.projectCard} key={project.title}>
+              <span>{project.meta}</span>
+              <h3>{project.title}</h3>
+              <strong>{project.role}</strong>
+              <p>{project.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="craft" className={styles.craftSection}>
+        <div className={styles.craftHeader}>
+          <p className={styles.eyebrow}>Technical skills</p>
+          <h2>Tools I use to build, analyze, and ship software.</h2>
+        </div>
+
+        <div className={styles.capabilityList}>
+          {capabilities.map((capability) => (
+            <span key={capability}>{capability}</span>
+          ))}
+        </div>
+      </section>
+
+      <section id="education" className={styles.credentialsSection}>
+        <div className={styles.credentialsGrid}>
+          <div>
+            <p className={styles.eyebrow}>Education</p>
+            <div className={styles.timeline}>
+              {education.map((item) => (
+                <article key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.place}</p>
+                  <span>{item.detail}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className={styles.eyebrow}>Certifications & strengths</p>
+            <div className={styles.listPanel}>
+              {certifications.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
+
+            <div className={styles.strengthList}>
+              {strengths.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

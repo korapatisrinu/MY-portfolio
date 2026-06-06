@@ -20,6 +20,10 @@
 # production
 /build
 
+# separate legacy portfolio
+/python-portfolio/
+/python-portfolio.zip
+
 # misc
 .DS_Store
 *.pem
