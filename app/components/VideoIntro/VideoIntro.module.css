@@ -448,7 +448,7 @@
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1180px) {
   .hero {
     min-height: 100svh;
   }
@@ -458,7 +458,7 @@
   }
 
   .content {
-    top: 19svh;
+    top: clamp(108px, 17svh, 154px);
     left: clamp(18px, 6vw, 42px);
     right: clamp(18px, 6vw, 42px);
     width: auto;
@@ -466,7 +466,8 @@
   }
 
   .title {
-    font-size: clamp(3.25rem, 14vw, 6.8rem);
+    max-width: min(92vw, 850px);
+    font-size: clamp(3.25rem, 8vw, 5.8rem);
   }
 
   .subtitle {
@@ -478,8 +479,8 @@
   .videoStage {
     top: auto;
     right: 50%;
-    bottom: 11svh;
-    width: min(76vw, 390px);
+    bottom: 9svh;
+    width: min(62vw, 420px);
     min-width: 0;
     transform: translateX(50%);
   }
@@ -496,32 +497,117 @@
   }
 }
 
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .videoStage {
+    inset: 72px 12px 76px;
+    width: auto;
+    aspect-ratio: auto;
+    transform: none;
+  }
+
+  .videoHalo {
+    display: none;
+  }
+
+  .mainVideo,
+  .finalImage {
+    border-radius: 22px;
+  }
+
+  .mainVideo {
+    position: absolute;
+    inset: 0;
+  }
+
+  .content {
+    top: clamp(130px, 20svh, 174px);
+    left: 24px;
+    right: 24px;
+    width: auto;
+  }
+
+  .title {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 12.5vw, 3.65rem);
+    line-height: 0.9;
+  }
+
+  .subtitle {
+    max-width: 34rem;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    line-height: 1.48;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9);
+  }
+
+  .actions {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .actions a {
+    min-height: 42px;
+    padding: 0 15px;
+    background: rgba(8, 8, 8, 0.58);
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+  }
+
+  .lightWash {
+    z-index: 4;
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.52) 0%, rgba(5, 5, 5, 0.16) 42%, rgba(5, 5, 5, 0.82) 100%),
+      linear-gradient(90deg, rgba(5, 5, 5, 0.46), rgba(5, 5, 5, 0.08), rgba(5, 5, 5, 0.46));
+  }
+
+  .readabilityOverlay {
+    z-index: 5;
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.7) 0%, rgba(5, 5, 5, 0.12) 58%, rgba(5, 5, 5, 0.78) 100%),
+      radial-gradient(ellipse at 50% 42%, transparent 12%, rgba(5, 5, 5, 0.34) 100%);
+  }
+
+  .controls {
+    right: auto;
+    bottom: 18px;
+    left: 14px;
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+}
+
 @media (max-width: 560px) {
   .siteNav {
     top: 12px;
     left: 12px;
-    gap: 6px;
+    gap: 4px;
     width: calc(100vw - 24px);
   }
 
   .navMark {
-    width: 36px;
-    height: 36px;
-    font-size: 0.74rem;
+    width: 34px;
+    height: 34px;
+    font-size: 0.7rem;
   }
 
   .navLinks a {
-    min-height: 36px;
-    padding: 0 11px;
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
+    min-height: 34px;
+    padding: 0 7px;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
   }
 
   .tagline {
     gap: 10px;
     margin-bottom: 14px;
-    font-size: 0.67rem;
-    letter-spacing: 0.18em;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
   }
 
   .tagline::before {
@@ -529,17 +615,12 @@
   }
 
   .title {
-    font-size: clamp(3rem, 16vw, 4.8rem);
+    font-size: clamp(2.25rem, 12.5vw, 3.35rem);
   }
 
   .subtitle {
     max-width: 31rem;
-    margin-top: 18px;
-  }
-
-  .videoStage {
-    bottom: 13svh;
-    width: min(82vw, 330px);
+    margin-top: 14px;
   }
 
   .soundHint {
@@ -562,8 +643,33 @@
     font-size: 0.7rem;
   }
 
-  .scrollIndicator {
-    bottom: 12px;
+  .actions a {
+    flex: 1 1 132px;
+  }
+}
+
+@media (max-width: 390px) {
+  .navLinks a {
+    padding: 0 6px;
+    font-size: 0.56rem;
+  }
+
+  .content {
+    top: 124px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .tagline {
+    max-width: 250px;
+  }
+
+  .title {
+    font-size: clamp(2.1rem, 12vw, 2.85rem);
+  }
+
+  .subtitle {
+    font-size: 0.84rem;
   }
 }
 
